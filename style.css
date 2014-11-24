@@ -1,0 +1,29 @@
+.alert-msg {
+	background: rgb(202, 60, 60);
+	color: #ffffff;
+}
+
+pre {
+	margin: 0;
+}
+
+textarea {
+	border:transparent;
+}
+
+textarea:focus,
+textarea:active {
+	outline: none;
+}
+
+pre, textarea {
+	height: 600px;
+	width: 95%;
+	padding: 0;
+	padding-top: 1rem;
+	border: transparent;
+}
+
+.code-output {
+	background: rgba(204,122,111,0.1);
+}
