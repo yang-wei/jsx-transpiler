@@ -10,7 +10,7 @@ var render = function(component) {
 var APP = React.createClass({
 	getInitialState: function() {
 		return {
-			input: '',
+			input: '<div>Hello JSX !</div>',
 			output: '',
 			error: ''
 		}
@@ -29,6 +29,11 @@ var APP = React.createClass({
 			});
 		}
 	},
+  componentDidMount: function() {
+   this.setState({
+    output: JSXTransformer.transform(this.state.input).code
+   }) 
+  },
 	render: function() {
 		return (
 			<div>
