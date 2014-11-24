@@ -1,3 +1,8 @@
+/* React v0.12.1 */
+(function(window) {
+
+'use strict';
+
 var render = function(component) {
 	React.render(component, document.body);
 };
@@ -14,10 +19,11 @@ var APP = React.createClass({
 		var code = e.target.value;
 		try {
 			this.setState({
-				output: code,
+				output: JSXTransformer.transform(code).code,
 				error: ''
-			});
+			})
 		} catch(error) {
+			console.log(error.message);
 			this.setState({
 				error: error.message
 			});
@@ -25,16 +31,25 @@ var APP = React.createClass({
 	},
 	render: function() {
 		return (
-			<div className="pure-g">
-				<div className="pure-u-1-2">
-					<textarea defaultValue={this.state.input} onChange={this.sync}></textarea>
+			<div>
+				<div className="pure-g">
+					<div className="pure-u-1 alert-msg">
+						<p>&nbsp;{this.state.error}</p>
+					</div>
 				</div>
-				<div className="pure-u-1-2">
-					<pre>{this.state.output}</pre>
+				<div className="pure-g">
+						<div className="pure-u-1-2">
+							<textarea defaultValue={this.state.input} onChange={this.sync}></textarea>
+						</div>
+						<div className="pure-u-1-2 code-output">
+							<pre>{this.state.output}</pre>
+						</div>
 				</div>
-			</div>	
+			</div>
 		);
 	}
 });
 
 render(<APP />);
+
+})(window, undefined);
