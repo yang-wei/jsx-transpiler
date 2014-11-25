@@ -36,12 +36,7 @@ var APP = React.createClass({
   },
 	render: function() {
 		return (
-			<div>
-				<div className="pure-g">
-					<div className="pure-u-1 alert-msg">
-						<p>&nbsp;{this.state.error}</p>
-					</div>
-				</div>
+			<div className="main-container">
 				<div className="pure-g">
 						<div className="pure-u-1-2">
 							<textarea defaultValue={this.state.input} onChange={this.sync}></textarea>
@@ -49,6 +44,11 @@ var APP = React.createClass({
 						<div className="pure-u-1-2 code-output">
 							<pre>{this.state.output}</pre>
 						</div>
+				</div>
+				<div className="pure-g">
+					<div className="pure-u-1 alert-msg">
+						<p>&nbsp;{this.state.error}</p>
+					</div>
 				</div>
 			</div>
 		);

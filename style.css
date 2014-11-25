@@ -1,6 +1,13 @@
+.main-container {
+	height: 100%;
+	width: 100%;
+}
+
 .alert-msg {
 	background: rgb(202, 60, 60);
 	color: #ffffff;
+	position: absolute;
+	bottom: 0;
 }
 
 pre {
@@ -18,9 +25,9 @@ textarea:active {
 
 pre, textarea {
 	height: 600px;
-	width: 95%;
-	padding: 0;
-	padding-top: 1rem;
+	width: 100%;
+	overflow: scroll;
+	padding: 1rem 0 0 0.5rem;
 	border: transparent;
 }
 
